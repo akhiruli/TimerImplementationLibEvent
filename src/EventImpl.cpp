@@ -1,18 +1,9 @@
-/*
- * Copyright (C) Verizon, 2013
- *
- * This unpublished material is proprietary to Verizon.  All rights reserved.
- * The methods and techniques described herein are considered trade secrets
- * and/or confidential. Reproduction or distribution, in whole or in part,
- * is forbidden except by express written permission of Verizon.
- */
+
 
 //! @file   EventImpl.h 
 //! @brief  
 //! @author Akhirul Islam
-//! @date   Jan, 2017
-//!
-//! 
+
 #include <EventImpl.h>
 #include <mutex>
 
@@ -64,13 +55,7 @@ void EventImpl::addToEv(struct event *ev)
 {
    event_add(ev, NULL);
 }
-/*
-struct event* EventImpl::getNewPersistentEvent(event_callback_fn cb, void *cookie)
-{
-   struct event *ev = event_new(m_pevbase, -1, EV_READ|EV_PERSIST, cb, cookie);
-   return ev;
-}
-*/
+
 void EventImpl::addToEv(struct event *ev, struct timeval *t_intvl)
 {
    event_add(ev, t_intvl);
